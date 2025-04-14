@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "vite"
-  },
+  "build": "vite build"
+},
   "dependencies": {
     "@tailwindcss/cli": "^4.0.7",
     "@tailwindcss/postcss": "^4.0.7",
