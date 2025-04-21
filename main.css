@@ -2,4 +2,162 @@
 @tailwind components;
 @tailwind utilities;
 
+ /* about Fade-in animation for content box */
+ .about-box {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Image hover effect */
+.profile-img {
+  transition: all 0.3s ease;
+}
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(249, 115, 22, 0.2); /* Tailwind orange-600 tint */
+}
+/* Secondary button hover */
+.secondary-button {
+  transition: all 0.3s ease;
+}
+.secondary-button:hover {
+  background-color: #f97316; /* Tailwind orange-600 */
+  color: white;
+  transform: translateY(-2px);
+}
 
+/*  skill Card fade-in animation */
+.skill-card {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Icon hover effect */
+.skill-icon {
+  transition: all 0.3s ease;
+}
+.skill-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #f97316; /* Tailwind orange-600 */
+}
+
+    /* connect  Fade-in animations */
+    .contact-element {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(15px);
+      animation-delay: calc(var(--index) * 0.2s);
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Form box hover */
+    .form-box {
+      transition: all 0.3s ease;
+    }
+    .form-box:hover {
+      box-shadow: 0 8px 16px rgba(249, 115, 22, 0.2); /* Tailwind orange-600 */
+    }
+    /* Social icon hover */
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: translateY(-2px) rotate(10deg);
+    }
+    /* Tooltip */
+    .tooltip {
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .group:hover .tooltip {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Parallax background */
+    #contact {
+      background-size: 100% 150%;
+      background-position: center;
+      animation: parallax 20s linear infinite;
+    }
+    @keyframes parallax {
+      0% { background-position: center 0; }
+      100% { background-position: center 100%; }
+    }
+    /* Responsive iframe */
+    .form-iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+
+      /*  education Fade-in animations */
+    .edu-element {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(15px);
+      animation-delay: calc(var(--index) * 0.2s);
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Card hover */
+    .edu-card {
+      transition: all 0.3s ease;
+    }
+    .edu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(249, 115, 22, 0.2); /* Tailwind orange-600 */
+    }
+    /* Icon hover */
+    .edu-icon {
+      transition: all 0.3s ease;
+    }
+    .edu-icon:hover {
+      transform: scale(1.2);
+    }
+    /* Timeline line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, #f97316, #fb923c); /* orange-600 to orange-400 */
+      z-index: 0;
+    }
+    @media (min-width: 1024px) {
+      .timeline::before {
+        left: 2rem;
+        transform: none;
+      }
+    }
+    /* Timeline dot */
+    .edu-card::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 1.5rem;
+      width: 16px;
+      height: 16px;
+      background: #f97316; /* orange-600 */
+      border-radius: 50%;
+      border: 3px solid #fff;
+      z-index: 1;
+    }
+    @media (max-width: 1023px) {
+      .edu-card::before {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -0.5rem;
+      }
+    }

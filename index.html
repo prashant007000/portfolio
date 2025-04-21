@@ -2,33 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="main.css" />
   <script src="https://unpkg.com/feather-icons"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Inter:wght@400;600&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="upcoming.html">
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="bg-white fixed top-0 left-0 w-full z-50 shadow-md  flex sm:flex-col lg:flex-row">
-    <div class="w-11/12 max-w-[1280px] mx-auto flex items-center justify-between py-4 ">
+  <nav class="bg-white fixed top-0 left-0 w-full z-50 shadow-lg">
+    <div class="w-11/12 max-w-[1280px] mx-auto flex items-center justify-between py-4">
       <!-- Logo -->
       <a href="#intro" class="flex items-center gap-3">
         <h1
-          class="font-['Poppins'] font-extrabold text-3xl text-gray-900 hover:text-orange-600 transition-all duration-300">
+          class="font-['Poppins'] font-extrabold text-3xl sm:text-4xl text-gray-900 hover:text-orange-600 transition-all duration-300">
           Prashant Sarode
         </h1>
       </a>
 
+      <!-- Hamburger Icon for Mobile -->
+      <button id="menu-toggle" class="lg:hidden text-gray-800 focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path id="hamburger-top" class="transition-all duration-300" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" d="M4 6h16"></path>
+          <path id="hamburger-middle" class="transition-all duration-300" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" d="M4 12h16"></path>
+          <path id="hamburger-bottom" class="transition-all duration-300" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" d="M4 18h16"></path>
+        </svg>
+      </button>
+
       <!-- Navigation Links -->
-      <ul class="flex space-x-10 ">
+        <ul id="nav-links"
+        class="hidden lg:flex lg:space-x-8 lg:items-center absolute lg:static top-16 left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none p-4 lg:p-0 transition-all duration-300 ease-in-out">
         <li class="relative group">
           <a href="#about"
-            class="text-gray-800 font-['Inter'] font-semibold text-[1rem] py-2 hover:text-orange-600 transition-all duration-300 ease-out">
+            class="text-gray-800 font-['Inter'] font-semibold text-base lg:text-lg py-2 hover:text-orange-600 transition-all duration-300 ease-out">
             About
           </a>
           <div
@@ -37,7 +52,7 @@
         </li>
         <li class="relative group">
           <a href="#skill"
-            class="text-gray-800 font-['Inter'] font-semibold text-[1rem] py-2 hover:text-orange-600 transition-all duration-300 ease-out">
+            class="text-gray-800 font-['Inter'] font-semibold text-base lg:text-lg py-2 hover:text-orange-600 transition-all duration-300 ease-out">
             Skills
           </a>
           <div
@@ -46,7 +61,7 @@
         </li>
         <li class="relative group">
           <a href="#project"
-            class="text-gray-800 font-['Inter'] font-semibold text-[1rem] py-2 hover:text-orange-600 transition-all duration-300 ease-out">
+            class="text-gray-800 font-['Inter'] font-semibold text-base lg:text-lg py-2 hover:text-orange-600 transition-all duration-300 ease-out">
             Projects
           </a>
           <div
@@ -55,7 +70,7 @@
         </li>
         <li class="relative group">
           <a href="#education"
-            class="text-gray-800 font-['Inter'] font-semibold text-[1rem] py-2 hover:text-orange-600 transition-all duration-300 ease-out">
+            class="text-gray-800 font-['Inter'] font-semibold text-base lg:text-lg py-2 hover:text-orange-600 transition-all duration-300 ease-out">
             Education
           </a>
           <div
@@ -64,7 +79,7 @@
         </li>
         <li class="relative group">
           <a href="#Certificates"
-            class="text-gray-800 font-['Inter'] font-semibold text-[1rem] py-2 hover:text-orange-600 transition-all duration-300 ease-out">
+            class="text-gray-800 font-['Inter'] font-semibold text-base lg:text-lg py-2 hover:text-orange-600 transition-all duration-300 ease-out">
             Certificates
           </a>
           <div
@@ -72,210 +87,311 @@
           </div>
         </li>
         <li class="relative group">
-          <a href="#contact"
-            class="text-gray-800 font-['Inter'] font-semibold text-[1rem] py-2 hover:text-orange-600 transition-all duration-300 ease-out">
-            Contact
+        <a href="upcoming.html"
+        class="text-gray-800 font-['Inter'] font-semibold text-base lg:text-lg py-2 hover:text-orange-600 transition-all duration-300 ease-out">
+        Upcoming
+      </a>
+      <div
+        class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 group-hover:w-full transition-all duration-300 ease-out">
+      </div>
+    </li>
+        <!-- Button for Mobile -->
+        <li class="lg:hidden mt-4">
+          <a href="#contact">
+            <button
+              class="py-2.5 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-['Inter'] font-semibold text-sm rounded-full shadow-md hover:shadow-lg hover:from-orange-600 hover:to-orange-700 hover:-translate-y-1 transition-all duration-300 ease-out">
+              Get in Touch
+            </button>
           </a>
-          <div
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 group-hover:w-full transition-all duration-300 ease-out">
-          </div>
         </li>
       </ul>
 
-      <!-- Button -->
-      <div class="flex items-center">
+      <!-- Button for Desktop -->
+      <div class="hidden lg:flex items-center">
         <a href="#contact">
-        <button 
-          class="py-2.5 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-['Inter'] font-semibold text-sm rounded-full shadow-md hover:shadow-lg hover:from-orange-600 hover:to-orange-700 hover:-translate-y-1 transition-all duration-300 ease-out">
-          Get in Touch
-        </button>
-      </a>
+          <button
+            class="py-2.5 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-['Inter'] font-semibold text-sm rounded-full shadow-md hover:shadow-lg hover:from-orange-600 hover:to-orange-700 hover:-translate-y-1 transition-all duration-300 ease-out">
+            Get in Touch
+          </button>
+        </a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="intro" class="relative bg-gradient-to-br from-blue-200 via-blue-300 to-orange-100 py-16 overflow-hidden">
-    <div class="w-11/12 max-w-[1200px] mx-auto flex flex-col md:flex-row  lg:flex-row justify-between items-center gap-10">
-
+  <section id="intro"
+    class="bg-gradient-to-b from-sky-900 via-sky-300 to-orange-100 pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">
+    <div class="w-11/12 max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
       <!-- Left Content -->
-      <div class="space-y-6 z-10 text-center md:text-left">
+      <div class="space-y-6 z-10 text-center lg:text-left">
         <h1
-          class="font-['Poppins'] font-extrabold text-[2.75rem] sm:text-[3.5rem] md:text-[4rem] leading-[1.1] tracking-tighter text-gray-900">
+          class="font-['Poppins'] font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tighter text-gray-900">
           <span class="block uppercase text-orange-600">Prashant</span>
           <span class="block uppercase text-gray-800">Sarode</span>
         </h1>
-        <div class="w-12 h-1.5 bg-orange-500 rounded-full mx-auto md:mx-0"></div>
+        <div class="w-16 h-1.5 bg-orange-500 rounded-full mx-auto lg:mx-0"></div>
         <p
-          class="font-['Inter'] font-medium text-[1.125rem] sm:text-[1.25rem] leading-7 text-gray-800 opacity-80 tracking-wide">
+          class="font-['Inter'] font-semibold text-base sm:text-lg lg:text-xl leading-7 text-gray-800 opacity-80 tracking-wide">
           Web Developer | Java & DSA | Photographer
         </p>
-        <div class="flex flex-col items-center md:items-start space-y-6">
-          <!-- Existing Buttons -->
-          <div class="flex items-center space-x-4">
-            <a href="#about" class="flex items-center gap-1">
+        <div class="flex flex-col items-center lg:items-start space-y-6">
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#about" class="w-full sm:w-auto">
               <button
-                class="bg-orange-500 text-white rounded-lg font-['Inter'] font-semibold text-lg py-3 px-6 hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                class="w-full sm:w-auto bg-orange-500 text-white rounded-full font-['Inter'] font-semibold text-base sm:text-lg py-3 px-6 hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300">
                 Explore
               </button>
             </a>
-            <button
-              class="bg-white text-gray-800 font-['Inter'] font-bold text-lg py-3 px-6 rounded-lg inline-flex items-center hover:bg-gray-400 transition-all duration-300 transform hover:scale-105">
-              <svg class="fill-current w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-              </svg>
-              <a target="_blank" href="/Prashant resume (1) (2).pdf"><span>Resume</span></a>
-            </button>
+            <a href="/resume/Prashant resume.pdf" target="_blank" class="w-full sm:w-auto">
+              <button
+                class="w-full sm:w-auto bg-white text-gray-800 font-['Inter'] font-bold text-base sm:text-lg py-3 px-6 rounded-full inline-flex items-center hover:bg-gray-100 hover:scale-105 transition-all duration-300">
+                <svg class="fill-current w-5 h-5 sm:w-6 sm:h-6 mr-3" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20">
+                  <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                </svg>
+                <span>Resume</span>
+              </button>
+            </a>
           </div>
           <!-- Social Buttons -->
-          <div class=" flex space-x-4">
+          <div class="flex space-x-4">
             <a href="https://linkedin.com/in/prashant-sarode-584508259" target="_blank"
-              class=" w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out ">
-              <i data-feather="linkedin"></i>
+              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out">
+              <i data-feather="linkedin" class="w-6 h-6"></i>
             </a>
             <a href="https://instagram.com/photo_by_prashant" target="_blank"
-              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
-              <i data-feather="instagram"></i>
+              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out">
+              <i data-feather="instagram" class="w-6 h-6"></i>
             </a>
             <a href="https://github.com/prashant007000" target="_blank"
-              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
-              <i data-feather="github"></i>
+              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out">
+              <i data-feather="github" class="w-6 h-6"></i>
             </a>
             <a href="https://twitter.com/Prashant3454546" target="_blank"
-              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
-              <i data-feather="twitter"></i>
+              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out">
+              <i data-feather="twitter" class="w-6 h-6"></i>
             </a>
           </div>
         </div>
       </div>
 
       <!-- Profile Image -->
-      <div class="relative z-10 h-auto m-[120px] ">
-        <img src="photos/m6.jpg" alt="Prashant Sarode Profile" class=" rounded-l  sm:max-w-[480px] h-100 w-100 object-cover " />
+      <div class="relative z-10 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] mt-8 lg:mt-0">
+        <img src="photos/m6.jpg" alt="Prashant Sarode Profile"
+          class="max-w-[500px] w-full h-auto rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl" />
       </div>
     </div>
   </section>
 
-
   <!-- about me -->
-  <section id="about" class="py-16 bg-gray-50">
+  <section id="about" class="py-16 bg-gray-50" role="region" aria-label="About Me Section">
     <div class="w-11/12 max-w-[1280px] mx-auto">
       <!-- Heading -->
-      <h2 class="font-['Poppins'] font-black text-[2.5rem] md:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-6">
+      <h2
+        class="font-['Poppins'] font-black text-[2.5rem] md:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-6"
+      >
         <span class="block uppercase text-orange-600">About</span>
         <span class="block uppercase">Me</span>
       </h2>
       <div class="w-12 h-1 bg-orange-600 mx-auto mb-10 rounded-full"></div>
-  
+
       <!-- Main Content Box -->
-      <div class="bg-orange-50 rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 border border-orange-200/50 shadow-md">
+      <div
+        class="bg-orange-100 rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 border border-orange-300/70 shadow-md about-box"
+        role="region"
+        aria-label="About Prashant Sarode"
+      >
         <!-- Left Section (Text) -->
         <div class="flex-1 space-y-6">
           <h3 class="font-['Inter'] font-semibold text-[1.75rem] text-gray-800 leading-tight">
             Hi, I’m <span class="text-orange-600">Prashant Sarode</span>
           </h3>
-          <p class="font-['Inter'] text-gray-700 text-[1.125rem] leading-7 opacity-90">
-            I’m a third-year student at the <span class="font-semibold">School of Information Technology (SOIT), RGPV</span>, 
-            pursuing a B.Tech in Artificial Intelligence and Machine Learning (AIML). I’m passionate about coding, 
-            especially in <span class="font-semibold text-orange-600">Java</span>, where I build efficient and creative solutions.
+          <p class="font-['Inter'] text-gray-700 text-[1.125rem] md:text-[1.125rem] text-[1rem] leading-7 opacity-90">
+            I’m a third-year B.Tech student at the
+            <span class="font-semibold">School of Information Technology (SOIT), RGPV</span>, specializing in
+            Artificial Intelligence and Machine Learning (AIML). I’m passionate about coding in
+            <span class="font-semibold text-orange-600">Java</span> and building AI-driven solutions with tools like Scikit-learn and TensorFlow.
           </p>
-          <p class="font-['Inter'] text-gray-700 text-[1.125rem] leading-7 opacity-90">
-            I love to <span class="font-semibold">explore</span> new technologies and <span class="font-semibold">interact</span> 
-            with communities to learn and grow. Whether it’s diving into algorithms or crafting web applications, 
-            I’m always up for a challenge!
+          <p class="font-['Inter'] text-gray-700 text-[1.125rem] md:text-[1.125rem] text-[1rem] leading-7 opacity-90">
+            I enjoy crafting <span class="font-semibold">responsive web applications</span> using the MERN stack and Tailwind CSS, exploring new technologies, and engaging with tech communities to grow my skills. I’m always ready to tackle challenging problems and create impactful projects!
           </p>
           <!-- Buttons -->
           <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <a href="#contact" 
-               class="bg-orange-600 text-white font-['Inter'] font-semibold text-[1rem] py-3 px-8 rounded-full hover:bg-orange-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
+            <a
+              href="#contact"
+              class="bg-orange-600 text-white font-['Inter'] font-semibold text-[1rem] py-3 px-8 rounded-full hover:bg-orange-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out"
+              aria-label="Connect with Prashant Sarode"
+            >
               Connect with Me
             </a>
-            
+            <a
+              href="#project"
+              class="secondary-button border-2 border-orange-600 text-orange-600 font-['Inter'] font-semibold text-[1rem] py-3 px-8 rounded-full hover:shadow-lg"
+              aria-label="View Prashant Sarode's Projects"
+            >
+              View Projects
+            </a>
           </div>
         </div>
-  
+
         <!-- Right Section (Image) -->
         <div class="flex-1 relative">
-          <img src="./photos/p4.png" 
-               alt="Prashant Sarode Illustration" 
-               class="max-w-[500px] w-full h-auto rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl" />
+          <img
+            src="/photos/pexels-goumbik-574071.jpg"
+            alt="Prashant Sarode Profile Avatar"
+            class="max-w-[400px] sm:max-w-[500px] w-full h-auto rounded-lg shadow-md profile-img"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
   </section>
-
-
   <!-- skill section -->
 
   <!-- Heading -->
   <section id="skill" class="py-16 bg-gray-50">
     <div class="w-11/12 max-w-[1280px] mx-auto">
       <!-- Heading -->
-      <h2 class="font-['Poppins'] font-black text-[2.5rem] md:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-6">
+      <h2
+        class="font-['Poppins'] font-black text-[2.5rem] md:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-6"
+      >
         <span class="block uppercase text-orange-600">My</span>
         <span class="block uppercase">Skills</span>
       </h2>
       <div class="w-12 h-1 bg-orange-600 mx-auto mb-10 rounded-full"></div>
-  
+
       <!-- Skills Cards Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
         <!-- Card 1: Programming Languages -->
-        <div class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-100 hover:via-white hover:to-orange-50">
-          <img src="./photos/coding.png" alt="Programming Icon" class="absolute right-3 top-3 w-12 h-12 rounded-full border border-gray-200 transition-all duration-300 hover:scale-110 hover:border-orange-400" />
+        <div
+          class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-200 hover:to-orange-100 skill-card"
+          style="--index: 1"
+          role="region"
+          aria-label="Programming Languages Skill"
+        >
+          <img
+            src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png"
+            alt="Java Programming Icon"
+            class="absolute right-3 top-3 w-10 h-10 rounded-full border border-gray-200 skill-icon"
+          />
           <div class="space-y-4">
-            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">Programming Languages</h3>
-            <p class="font-['Inter'] text-gray-600 text-[1rem]">Proficient in Java, JavaScript, HTML, and Tailwind CSS for development.</p>
-            
+            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">
+              Programming Languages
+            </h3>
+            <p class="font-['Inter'] text-gray-600 text-[1rem]">
+              Proficient in Java, JavaScript, HTML, and Tailwind CSS for building robust and dynamic applications.
+            </p>
           </div>
         </div>
-  
+
         <!-- Card 2: Web Development -->
-        <div class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-100 hover:via-white hover:to-orange-50">
-          <img src="./photos/code-editor.png" alt="Code Editor Icon" class="absolute right-3 top-3 w-12 h-12 rounded-full border border-gray-200 transition-all duration-300 hover:scale-110 hover:border-orange-400" />
+        <div
+          class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-200 hover:to-orange-100 skill-card"
+          style="--index: 2"
+          role="region"
+          aria-label="Web Development Skill"
+        >
+          <img
+            src="https://img.icons8.com/color/48/000000/code.png"
+            alt="Web Development Icon"
+            class="absolute right-3 top-3 w-10 h-10 rounded-full border border-gray-200 skill-icon"
+          />
           <div class="space-y-4">
-            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">Web Development</h3>
-            <p class="font-['Inter'] text-gray-600 text-[1rem]">Building responsive and modern web apps with MERN stack and Tailwind CSS.</p>
-            
+            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">
+              Web Development
+            </h3>
+            <p class="font-['Inter'] text-gray-600 text-[1rem]">
+              Building responsive, modern web apps using MERN stack and Tailwind CSS.
+            </p>
           </div>
         </div>
-  
+
         <!-- Card 3: Problem Solving -->
-        <div class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-100 hover:via-white hover:to-orange-50">
-          <img src="./photos/software-developer.png" alt="Developer Icon" class="absolute right-3 top-3 w-12 h-12 rounded-full border border-gray-200 transition-all duration-300 hover:scale-110 hover:border-orange-400" />
+        <div
+          class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-200 hover:to-orange-100 skill-card"
+          style="--index: 3"
+          role="region"
+          aria-label="Problem Solving Skill"
+        >
+          <img
+            src="https://img.icons8.com/color/48/000000/puzzle.png"
+            alt="Problem Solving Icon"
+            class="absolute right-3 top-3 w-10 h-10 rounded-full border border-gray-200 skill-icon"
+          />
           <div class="space-y-4">
-            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">Problem Solving</h3>
-            <p class="font-['Inter'] text-gray-600 text-[1rem]">Strong grasp of Data Structures and Algorithms for efficient solutions.</p>
-           
+            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">
+              Problem Solving
+            </h3>
+            <p class="font-['Inter'] text-gray-600 text-[1rem]">
+              Strong expertise in Data Structures and Algorithms, solving complex problems efficiently using Java and JavaScript.
+            </p>
           </div>
         </div>
-  
+
         <!-- Card 4: Version Control -->
-        <div class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-100 hover:via-white hover:to-orange-50">
-          <img src="./photos/git.png" alt="Git Icon" class="absolute right-3 top-3 w-12 h-12 rounded-full border border-gray-200 transition-all duration-300 hover:scale-110 hover:border-orange-400" />
+        <div
+          class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-200 hover:to-orange-100 skill-card"
+          style="--index: 4"
+          role="region"
+          aria-label="Version Control Skill"
+        >
+          <img
+            src="https://img.icons8.com/color/48/000000/git.png"
+            alt="Git Version Control Icon"
+            class="absolute right-3 top-3 w-10 h-10 rounded-full border border-gray-200 skill-icon"
+          />
           <div class="space-y-4">
-            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">Version Control</h3>
-            <p class="font-['Inter'] text-gray-600 text-[1rem]">Experienced with Git and GitHub for version control and collaboration.</p>
-            
+            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">
+              Version Control
+            </h3>
+            <p class="font-['Inter'] text-gray-600 text-[1rem]">
+              Experienced with Git and GitHub for version control, collaboration, and managing project workflows.
+            </p>
           </div>
         </div>
-  
-        <!-- Card 5: productivity tool -->
-        <div class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-100 hover:via-white hover:to-orange-50">
-          <img src="./photos/analysis.png" alt="Analysis Icon" class="absolute right-3 top-3 w-12 h-12 rounded-full border border-gray-200 transition-all duration-300 hover:scale-110 hover:border-orange-400" />
+
+        <!-- Card 5: Productivity Tools -->
+        <div
+          class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-200 hover:to-orange-100 skill-card"
+          style="--index: 5"
+          role="region"
+          aria-label="Productivity Tools Skill"
+        >
+          <img
+            src="https://img.icons8.com/color/48/microsoft-word-2019--v1.png"
+            alt="Power BI Icon"
+            class="absolute right-3 top-3 w-10 h-10 rounded-full border border-gray-200 skill-icon"
+          />
           <div class="space-y-4">
-            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">Productivity Tool</h3>
-            <p class="font-['Inter'] text-gray-600 text-[1rem]">Skilled in analyzing and visualizing data using  Power BI , MS word .</p>
-            
+            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">
+              Productivity Tools
+            </h3>
+            <p class="font-['Inter'] text-gray-600 text-[1rem]">
+              Skilled in data analysis and visualization using Power BI, Microsoft Word, and Excel for impactful insights.
+            </p>
           </div>
         </div>
-  
+
         <!-- Card 6: Machine Learning -->
-        <div class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-100 hover:via-white hover:to-orange-50">
-          <img src="./photos/deep-learning.png" alt="ML Icon" class="absolute right-3 top-3 w-12 h-12 rounded-full border border-gray-200 transition-all duration-300 hover:scale-110 hover:border-orange-400" />
+        <div
+          class="relative bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-200 hover:to-orange-100 skill-card"
+          style="--index: 6"
+          role="region"
+          aria-label="Machine Learning Skill"
+        >
+          <img
+            src="https://img.icons8.com/color/48/000000/artificial-intelligence.png"
+            alt="Machine Learning Icon"
+            class="absolute right-3 top-3 w-10 h-10 rounded-full border border-gray-200 skill-icon"
+          />
           <div class="space-y-4">
-            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">Machine Learning</h3>
-            <p class="font-['Inter'] text-gray-600 text-[1rem]">Knowledge of ML concepts and implementation.</p>
-           
+            <h3 class="font-['Inter'] font-semibold text-[1.375rem] text-gray-800">
+              Machine Learning
+            </h3>
+            <p class="font-['Inter'] text-gray-600 text-[1rem]">
+              Proficient in Machine Learning with Scikit-learn, TensorFlow, and Python for predictive modeling and data analysis.
+            </p>
           </div>
         </div>
       </div>
@@ -296,9 +412,12 @@
       <div class="space-y-12">
         <!-- Project 1 -->
         <div class="bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">Drawing application</h3>
+          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">
+            Drawing application
+          </h3>
           <p class="font-['Inter'] text-gray-600 text-[1rem] leading-6 mb-4">
-            A JavaScript-based drawing app with a canvas, offering brushes, colors, and real-time sketching for creative digital art.
+            A JavaScript-based drawing app with a canvas, offering brushes,
+            colors, and real-time sketching for creative digital art.
           </p>
           <!-- Tech Stack Images -->
           <div class="flex space-x-4 mb-6">
@@ -306,46 +425,55 @@
             <img src="./photos/css.png" alt="Tailwind CSS" class="w-10 h-10 object-contain" />
             <img src="./photos/js.png" alt="JavaScript" class="w-10 h-10 object-contain" />
           </div>
+
           <!-- Code Button -->
-          <button
-            class="relative bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-6 rounded-full overflow-hidden transition-all duration-300 ease-out group hover:bg-orange-700 hover:shadow-md">
+          <a href="https://github.com/prashant007000/drawing_app_starter-main.git" target="_blank"
+            class="relative bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2.5 px-6 rounded-full overflow-hidden transition-all duration-300 ease-out group hover:bg-orange-700 hover:shadow-md">
             <span
               class="absolute inset-0 bg-gradient-to-r from-white/20 via-white/40 to-transparent w-0 group-hover:w-full transition-all duration-300 ease-out"></span>
             <span class="relative">View Code</span>
-          </button>
-          <button class="m-2 bg-blue-200 hover:bg-blue-400 text-blue-950 font-semibold py-1 px-3 border-b-4 border-blue-900 hover:border-blue-500 rounded-full">
+          </a>
+          <button
+            class="m-2 bg-blue-200 hover:bg-blue-400 text-blue-950 font-semibold py-1 px-3 border-b-4 border-blue-900 hover:border-blue-500 rounded-full">
             View Project
           </button>
         </div>
 
         <!-- Project 2 -->
         <div class="bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">Game-Stone Paper Seccior</h3>
+          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">
+            Game-Stone Paper Scissors
+          </h3>
           <p class="font-['Inter'] text-gray-600 text-[1rem] leading-6 mb-4">
-            A Stone-Paper-Scissors game using hand gesture recognition, built with a library like MediaPipe for real-time interactive gameplay.
+            A Stone-Paper-Scissors game using hand gesture recognition, built
+            with a library like MediaPipe for real-time interactive gameplay.
           </p>
           <div class="flex space-x-4 mb-6">
             <img src="./photos/html.png" alt="HTML" class="w-10 h-10 object-contain" />
             <img src="./photos/css.png" alt="Tailwind CSS" class="w-10 h-10 object-contain" />
             <img src="./photos/js.png" alt="JavaScript" class="w-10 h-10 object-contain" />
-            <img src="./photos/Python.png" alt="CSS" class="w-10 h-10 object-contain" />
+            <img src="./photos/python.png" alt="Python" class="w-10 h-10 object-contain" />
           </div>
-          <button
-            class="relative bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-6 rounded-full overflow-hidden transition-all duration-300 ease-out group hover:bg-orange-700 hover:shadow-md">
+          <a href="https://github.com/prashant007000/Stone-Paper-Scissors---AI-Hand-Detection-Game.git"target="_blank"
+            class="relative bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2.5 px-6 rounded-full overflow-hidden transition-all duration-300 ease-out group hover:bg-orange-700 hover:shadow-md">
             <span
               class="absolute inset-0 bg-gradient-to-r from-white/20 via-white/40 to-transparent w-0 group-hover:w-full transition-all duration-300 ease-out"></span>
             <span class="relative">View Code</span>
-          </button>
-          <button class="m-2 bg-blue-200 hover:bg-blue-400 text-blue-950 font-semibold py-1 px-3 border-b-4 border-blue-900 hover:border-blue-500 rounded-full">
+          </a>
+          <button
+            class="m-2 bg-blue-200 hover:bg-blue-400 text-blue-950 font-semibold py-1 px-3 border-b-4 border-blue-900 hover:border-blue-500 rounded-full">
             View Project
           </button>
         </div>
-
         <!-- Project 3 -->
         <div class="bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">credit risk Modeling</h3>
+          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">
+            credit risk Modeling
+          </h3>
           <p class="font-['Inter'] text-gray-600 text-[1rem] leading-6 mb-4">
-            Credit risk modeling assesses the likelihood of borrowers defaulting on loans, using statistical techniques to predict and manage financial risks effectively.
+            Credit risk modeling assesses the likelihood of borrowers
+            defaulting on loans, using statistical techniques to predict and
+            manage financial risks effectively.
           </p>
           <div class="flex space-x-4 mb-6">
             <img src="./photos/html.png" alt="HTML" class="w-10 h-10 object-contain" />
@@ -353,22 +481,28 @@
             <img src="./photos/js.png" alt="JavaScript" class="w-10 h-10 object-contain" />
             <img src="./photos/python.png" alt="Node.js" class="w-10 h-10 object-contain" />
           </div>
-          <button
-            class="relative bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-6 rounded-full overflow-hidden transition-all duration-300 ease-out group hover:bg-orange-700 hover:shadow-md">
+
+          <a href="https://github.com/prashant007000/ml-project-credit-risk-modelling.git" target="_blank"
+            class="relative bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2.5 px-6 rounded-full overflow-hidden transition-all duration-300 ease-out group hover:bg-orange-700 hover:shadow-md">
             <span
               class="absolute inset-0 bg-gradient-to-r from-white/20 via-white/40 to-transparent w-0 group-hover:w-full transition-all duration-300 ease-out"></span>
             <span class="relative">View Code</span>
-          </button>
-          <button class="m-2 bg-blue-200 hover:bg-blue-400 text-blue-950 font-semibold py-1 px-3 border-b-4 border-blue-900 hover:border-blue-500 rounded-full">
+          </a>
+
+          <button
+            class="m-2 bg-blue-200 hover:bg-blue-400 text-blue-950 font-semibold py-1 px-3 border-b-4 border-blue-900 hover:border-blue-500 rounded-full">
             View Project
           </button>
         </div>
 
         <!-- Project 4 -->
         <div class="bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">Weather Dashboard</h3>
+          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">
+            Weather Dashboard
+          </h3>
           <p class="font-['Inter'] text-gray-600 text-[1rem] leading-6 mb-4">
-            A real-time weather app fetching data from an API, displaying forecasts with interactive UI elements.
+            A real-time weather app fetching data from an API, displaying
+            forecasts with interactive UI elements.
           </p>
           <div class="flex space-x-4 mb-6">
             <img src="./photos/html.png" alt="HTML" class="w-10 h-10 object-contain" />
@@ -382,7 +516,8 @@
               class="absolute inset-0 bg-gradient-to-r from-white/20 via-white/40 to-transparent w-0 group-hover:w-full transition-all duration-300 ease-out"></span>
             <span class="relative">View Code</span>
           </button>
-          <button class="m-2 bg-blue-200 hover:bg-blue-400 text-blue-950 font-semibold py-1 px-3 border-b-4 border-blue-900 hover:border-blue-500 rounded-full">
+          <button
+            class="m-2 bg-blue-200 hover:bg-blue-400 text-blue-950 font-semibold py-1 px-3 border-b-4 border-blue-900 hover:border-blue-500 rounded-full">
             View Project
           </button>
         </div>
@@ -391,271 +526,316 @@
   </section>
 
   <!-- education section -->
-  <section id="education" class="relative bg-gray-100 py-16">
+  <section
+  id="education"
+  class="relative bg-gradient-to-b from-orange-50 to-gray-100 py-16 lg:py-20"
+  role="region"
+  aria-label="Prashant Sarode's Education"
+>
+  <div class="w-11/12 max-w-[1280px] xl:max-w-[1400px] mx-auto">
+    <!-- Heading -->
+    <h2
+      class="edu-element font-['Poppins'] font-black text-[2rem] md:text-[3rem] xl:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-12"
+      style="--index: 1"
+    >
+      <span class="block uppercase text-orange-600">My</span>
+      <span class="block uppercase">Education</span>
+    </h2>
+
+    <!-- Education Container -->
+    <div class="relative timeline space-y-10 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
+      <!-- College -->
+      <article
+        class="edu-element edu-card relative bg-white rounded-xl shadow-md p-6 lg:p-8"
+        style="--index: 2"
+        aria-label="B.Tech in Artificial Intelligence and Machine Learning"
+      >
+        <div class="flex items-center mb-4">
+          <i class="fas fa-graduation-cap w-8 h-8 lg:w-10 lg:h-10 text-orange-600 mr-3 edu-icon" aria-hidden="true"></i>
+          <h3 class="font-['Inter'] font-semibold text-xl md:text-2xl text-gray-800">
+            B.Tech in AI & ML
+          </h3>
+        </div>
+        <p class="font-['Inter'] text-gray-600 text-base leading-6">
+          School of Information Technology, RGPV, Bhopal
+        </p>
+        <p class="font-['Inter'] text-gray-600 text-sm md:text-[0.95rem] leading-6 mt-2">
+          2022 - Present | 3rd Year (6th Semester) | <span class="text-orange-600 font-semibold">CGPA: 7.18</span>
+        </p>
+      </article>
+
+      <!-- School -->
+      <article
+        class="edu-element edu-card relative bg-white rounded-xl shadow-md p-6 lg:p-8"
+        style="--index: 3"
+        aria-label="Higher Secondary Education"
+      >
+        <div class="flex items-center mb-4">
+          <i class="fas fa-book w-8 h-8 lg:w-10 lg:h-10 text-orange-600 mr-3 edu-icon" aria-hidden="true"></i>
+          <h3 class="font-['Inter'] font-semibold text-xl md:text-2xl text-gray-800">
+            Higher Secondary Education
+          </h3>
+        </div>
+        <p class="font-['Inter'] text-gray-600 text-base leading-6">
+          Corolla Public School, Multai
+        </p>
+        <p class="font-['Inter'] text-gray-600 text-sm md:text-[0.95rem] leading-6 mt-2">
+          2020 - 2022 <span class="text-orange-600 font-semibold"></span>
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- Certificates Container -->
+  <section id="Certificates" class="relative bg-white py-16">
     <div class="w-11/12 max-w-[1280px] mx-auto">
       <!-- Heading -->
       <h2
         class="font-['Poppins'] font-black text-[2.5rem] md:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-12">
         <span class="block uppercase text-orange-600">My</span>
-        <span class="block uppercase">Education</span>
+        <span class="block uppercase">Certificates</span>
       </h2>
 
-      <!-- Education Container -->
+      <!-- Certificates Container -->
       <div class="space-y-10">
-        <!-- College -->
-        <div class="bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">
-            B.Tech in Artificial Intelligence and Machine learning
-          </h3>
-          <p class="font-['Inter'] text-gray-600 text-[1rem] leading-6">
-            School of Information Technology, RGPV, Bhopal
-          </p>
-          <p class="font-['Inter'] text-gray-600 text-[0.95rem] leading-6 mt-1">
-            2022 - Present | 3rd Year (6th Semester) | CGPA: 6.18
-          </p>
+        <!-- Certificate 1 -->
+        <div
+          class="bg-gray-50 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+          <div class="flex items-center justify-between flex-col sm:flex-row gap-6">
+            <div class="flex items-center space-x-4">
+              <img src="./certificate/CSCO.png" alt="Coursera Logo" class="w-12 h-12 object-contain" />
+              <div>
+                <h3 class="font-['Inter'] font-semibold text-[1.25rem] text-gray-800">
+                  Python Programming Certification
+                </h3>
+                <p class="font-['Inter'] text-gray-600 text-[0.95rem] mt-1">
+                  Issued by Cisco
+                </p>
+              </div>
+            </div>
+            <a href="./certificate/cisco.pdf" target="_blank"
+              class="bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-5 rounded-full hover:bg-orange-700 transition-all duration-300 ease-out">
+              View Certificate
+            </a>
+          </div>
         </div>
 
-        <!-- School -->
-        <div class="bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 mb-2">
-            Higher Secondary Education
-          </h3>
-          <p class="font-['Inter'] text-gray-600 text-[1rem] leading-6">
-            Corolla Public School, Multai
-          </p>
-          <p class="font-['Inter'] text-gray-600 text-[0.95rem] leading-6 mt-1">
-            Completed: 2022
-          </p>
+        <!-- Certificate 2 -->
+        <div
+          class="bg-gray-50 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+          <div class="flex items-center justify-between flex-col sm:flex-row gap-6">
+            <div class="flex items-center space-x-4">
+              <img src="./certificate/google.png" alt="Udemy Logo" class="w-12 h-12 object-contain" />
+              <div>
+                <h3 class="font-['Inter'] font-semibold text-[1.25rem] text-gray-800">
+                  Fundamental Of Digital Marketing
+                </h3>
+                <p class="font-['Inter'] text-gray-600 text-[0.95rem] mt-1">
+                  Issued by google
+                </p>
+              </div>
+            </div>
+            <a href="./certificate/google.pdf" target="_blank"
+              class="bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-5 rounded-full hover:bg-orange-700 transition-all duration-300 ease-out">
+              View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div
+          class="bg-gray-50 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+          <div class="flex items-center justify-between flex-col sm:flex-row gap-6">
+            <div class="flex items-center space-x-4">
+              <img src="./certificate/ACN_BIG.png" alt="Udemy Logo" class="w-12 h-12 object-contain" />
+              <div>
+                <h3 class="font-['Inter'] font-semibold text-[1.25rem] text-gray-800">
+                  Data Analytics and Visualization Job Simulation
+                </h3>
+                <p class="font-['Inter'] text-gray-600 text-[0.95rem] mt-1">
+                  Accenture
+                </p>
+              </div>
+            </div>
+            <a href="./certificate/accenture.pdf" target="_blank"
+              class="bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-5 rounded-full hover:bg-orange-700 transition-all duration-300 ease-out">
+              View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div
+          class="bg-gray-50 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+          <div class="flex items-center justify-between flex-col sm:flex-row gap-6">
+            <div class="flex items-center space-x-4">
+              <img src="./certificate/TCS.NS.png" alt="Codedamn Logo" class="w-12 h-12 object-contain" />
+              <div>
+                <h3 class="font-['Inter'] font-semibold text-[1.25rem] text-gray-800">
+                  TCS iON Career Edge - Young Professional
+                </h3>
+                <p class="font-['Inter'] text-gray-600 text-[0.95rem] mt-1">
+                  Issued by TCS ion
+                </p>
+              </div>
+            </div>
+            <a href="./certificate/tcs.pdf" target="_blank"
+              class="bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-5 rounded-full hover:bg-orange-700 transition-all duration-300 ease-out">
+              View Certificate
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- YouTube Video -->
+  <div class="mt-1 m-12">
+    <h2
+      class="font-['Poppins'] font-black text-[2.5rem] md:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-6">
+      <span class="block uppercase text-orange-600">YouTube</span>
+      <span class="block uppercase">Video</span>
+    </h2>
+    <div class="w-12 h-1 bg-orange-600 mx-auto mb-10 rounded-full"></div>
 
+    <div class="relative w-full max-w-[800px] mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
+      <iframe src="https://www.youtube.com/embed/your-video-id" title="Prashant Sarode - About Me" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        class="w-full h-full"></iframe>
+    </div>
+  </div>
 
-      <!-- Certificates Container -->
-      <section id="Certificates" class="relative bg-white py-16">
-        <div class="w-11/12 max-w-[1280px] mx-auto">
-          <!-- Heading -->
-          <h2
-            class="font-['Poppins'] font-black text-[2.5rem] md:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-12">
-            <span class="block uppercase text-orange-600">My</span>
-            <span class="block uppercase">Certificates</span>
-          </h2>
+  <!-- connect -->
+  <section id="contact"
+    class="bg-gradient-to-b from-orange-100 via-sky-300 to-sky-900 pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">
+    <div class="w-11/12 max-w-[1280px] mx-auto">
+      <!-- Heading -->
+      <h2
+        class="font-['Poppins'] font-black text-[2.5rem] md:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-6">
+        <span class="block uppercase text-orange-600">Get in</span>
+        <span class="block uppercase">Touch</span>
+      </h2>
+      <div class="w-12 h-1 bg-orange-600 mx-auto mb-10 rounded-full"></div>
 
-          <!-- Certificates Container -->
-          <div class="space-y-10">
-            <!-- Certificate 1 -->
-            <div
-              class="bg-gray-50 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-              <div class="flex items-center justify-between flex-col sm:flex-row gap-6">
-                <div class="flex items-center space-x-4">
-                  <img src="./certificate/CSCO.png" alt="Coursera Logo" class="w-12 h-12 object-contain" />
-                  <div>
-                    <h3 class="font-['Inter'] font-semibold text-[1.25rem] text-gray-800">
-                      Python Programming Certification
-                    </h3>
-                    <p class="font-['Inter'] text-gray-600 text-[0.95rem] mt-1">
-                      Issued by Cisco
-                    </p>
-                  </div>
-                </div>
-                <a href="./certificate/cisco.pdf" target="_blank"
-                  class="bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-5 rounded-full hover:bg-orange-700 transition-all duration-300 ease-out">
-                  View Certificate
-                </a>
+      <!-- Main Content -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Left Section: Send Me a Message -->
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="flex items-center mb-6">
+            <i data-feather="message-square" class="w-8 h-8 text-orange-600 mr-3"></i>
+            <h3 class="font-['Inter'] font-semibold text-2xl text-gray-800">
+              Send Me a Message
+            </h3>
+          </div>
+          <!-- Google Form Embed -->
+         <!-- Google Form Embed -->
+         <iframe
+         src="https://forms.gle/vyyjJePvSRb9asDc9"
+         class="form-iframe"
+         height="300"
+         frameborder="0"
+         marginheight="0"
+         marginwidth="0"
+         loading="lazy"
+         title="Contact Form for Prashant Sarode"
+       >Loading…</iframe>
+          <!-- Fallback Message -->
+          <p class="mt-4 text-gray-600 font-['Inter'] text-center">
+            If the form doesn’t load, please email me directly at
+            <a href="mailto:prashantsarode204@gmail.com"
+              class="text-orange-600 hover:underline">prashantsarode204@gmail.com</a>.
+          </p>
+        </div>
+
+        <!-- Right Section: Contact Info & Social Links -->
+        <div class="space-y-8">
+          <div class="bg-white rounded-xl p-8 shadow-md">
+            <h3 class="font-['Inter'] font-semibold text-[1.75rem] text-gray-800 mb-6">
+              Contact Information
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <i data-feather="mail" class="w-6 h-6 text-orange-600 mr-3"></i>
+                <p class="font-['Inter'] text-gray-700 text-[1rem]">
+                  prashantsarode204@gmail.com
+                </p>
               </div>
-            </div>
-
-            <!-- Certificate 2 -->
-            <div
-              class="bg-gray-50 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-              <div class="flex items-center justify-between flex-col sm:flex-row gap-6">
-                <div class="flex items-center space-x-4">
-                  <img src="./certificate/google.png" alt="Udemy Logo" class="w-12 h-12 object-contain" />
-                  <div>
-                    <h3 class="font-['Inter'] font-semibold text-[1.25rem] text-gray-800">
-                      Fundamental Of Digital Marketing
-                    </h3>
-                    <p class="font-['Inter'] text-gray-600 text-[0.95rem] mt-1">
-                      Issued by google
-                    </p>
-                  </div>
-                </div>
-                <a href="./certificate/google.pdf" target="_blank"
-                  class="bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-5 rounded-full hover:bg-orange-700 transition-all duration-300 ease-out">
-                  View Certificate
-                </a>
+              <div class="flex items-center">
+                <i data-feather="phone" class="w-6 h-6 text-orange-600 mr-3"></i>
+                <p class="font-['Inter'] text-gray-700 text-[1rem]">
+                  +91-8461921431
+                </p>
               </div>
-            </div>
-
-            <!-- Certificate 3 -->
-            <div
-              class="bg-gray-50 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-              <div class="flex items-center justify-between flex-col sm:flex-row gap-6">
-                <div class="flex items-center space-x-4">
-                  <img src="./certificate/ACN_BIG.png" alt="Udemy Logo" class="w-12 h-12 object-contain" />
-                  <div>
-                    <h3 class="font-['Inter'] font-semibold text-[1.25rem] text-gray-800">
-                      Data Analytics and Visualization Job Simulation
-                    </h3>
-                    <p class="font-['Inter'] text-gray-600 text-[0.95rem] mt-1">
-                      Accenture
-                    </p>
-                  </div>
-                </div>
-                <a href="./certificate/accenture.pdf" target="_blank"
-                  class="bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-5 rounded-full hover:bg-orange-700 transition-all duration-300 ease-out">
-                  View Certificate
-                </a>
-              </div>
-            </div>
-
-            <!-- Certificate 4 -->
-            <div
-              class="bg-gray-50 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-              <div class="flex items-center justify-between flex-col sm:flex-row gap-6">
-                <div class="flex items-center space-x-4">
-                  <img src="./certificate/TCS.NS.png" alt="Codedamn Logo" class="w-12 h-12 object-contain" />
-                  <div>
-                    <h3 class="font-['Inter'] font-semibold text-[1.25rem] text-gray-800">
-                      TCS iON Career Edge - Young Professional
-                    </h3>
-                    <p class="font-['Inter'] text-gray-600 text-[0.95rem] mt-1">
-                      Issued by TCS ion
-                    </p>
-                  </div>
-                </div>
-                <a href="./certificate/tcs.pdf" target="_blank"
-                  class="bg-orange-600 text-white font-['Inter'] font-semibold text-sm py-2 px-5 rounded-full hover:bg-orange-700 transition-all duration-300 ease-out">
-                  View Certificate
-                </a>
-              </div>
-            </div>
-
-            <!-- YouTube Video -->
-            <div class="mt-12">
-              <h3 class="font-['Inter'] font-semibold text-[1.5rem] text-gray-800 text-center mb-6">
-                About Me - Video Introduction
-              </h3>
-              <div class="relative w-full max-w-[800px] mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
-                <iframe src="https://www.youtube.com/embed/your-video-id" title="Prashant Sarode - About Me"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen class="w-full h-full"></iframe>
+              <div class="flex items-center">
+                <i data-feather="map-pin" class="w-6 h-6 text-orange-600 mr-3"></i>
+                <p class="font-['Inter'] text-gray-700 text-[1rem]">
+                  Bhopal, India
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- connect -->
-      <section id="contact" class="py-16 bg-orange-50">
-        <div class="w-11/12 max-w-[1280px] mx-auto">
-          <!-- Heading -->
-          <h2 class="font-['Poppins'] font-black text-[2.5rem] md:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-6">
-            <span class="block uppercase text-orange-600">Get in</span>
-            <span class="block uppercase">Touch</span>
-          </h2>
-          <div class="w-12 h-1 bg-orange-600 mx-auto mb-10 rounded-full"></div>
-      
-          <!-- Main Content -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- Left Section: Contact Form -->
-            <div class="bg-white rounded-xl p-8 shadow-md">
-              <h3 class="font-['Inter'] font-semibold text-[1.75rem] text-gray-800 mb-6">Send Me a Message</h3>
-              <form class="space-y-6">
-                <div>
-                  <label for="name" class="block text-gray-700 font-['Inter'] font-medium mb-2">Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" 
-                    placeholder="Your Name" 
-                    required 
-                  />
-                </div>
-                <div>
-                  <label for="email" class="block text-gray-700 font-['Inter'] font-medium mb-2">Email</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" 
-                    placeholder="your.email@example.com" 
-                    required 
-                  />
-                </div>
-                <div>
-                  <label for="message" class="block text-gray-700 font-['Inter'] font-medium mb-2">Message</label>
-                  <textarea 
-                    id="message" 
-                    name="message" 
-                    rows="4" 
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" 
-                    placeholder="Your message here..." 
-                    required 
-                  ></textarea>
-                </div>
-                <button 
-                  type="submit" 
-                  class="w-full bg-orange-600 text-white font-['Inter'] font-semibold text-lg py-3 rounded-lg hover:bg-orange-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-      
-            <!-- Right Section: Contact Info & Social Links -->
-            <div class="space-y-8">
-              <div class="bg-white rounded-xl p-8 shadow-md">
-                <h3 class="font-['Inter'] font-semibold text-[1.75rem] text-gray-800 mb-6">Contact Information</h3>
-                <div class="space-y-4">
-                  <div class="flex items-center">
-                    <i data-feather="mail" class="w-6 h-6 text-orange-600 mr-3"></i>
-                    <p class="font-['Inter'] text-gray-700 text-[1rem]">prashantsarode260@gmail.com</p>
-                  </div>
-                  <div class="flex items-center">
-                    <i data-feather="phone" class="w-6 h-6 text-orange-600 mr-3"></i>
-                    <p class="font-['Inter'] text-gray-700 text-[1rem]">+91-8461921431</p>
-                  </div>
-                  <div class="flex items-center">
-                    <i data-feather="map-pin" class="w-6 h-6 text-orange-600 mr-3"></i>
-                    <p class="font-['Inter'] text-gray-700 text-[1rem]">Bhopal, India</p>
-                  </div>
-                </div>
-              </div>
-      
-              <!-- Social Links -->
-              <div class=" flex space-x-4">
-                <a href="https://linkedin.com/in/prashant-sarode-584508259"
-                  class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
-                  <i data-feather="linkedin"></i>
-                </a>
-                <a href="https://instagram.com/photo_by_prashant" target="_blank"
-                  class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
-                  <i data-feather="instagram"></i>
-                </a>
-                <a href="https://github.com/prashant007000" target="_blank"
-                  class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
-                  <i data-feather="github"></i>
-                </a>
-                <a href="https://twitter.com/Prashant3454546" target="_blank"
-                  class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
-                  <i data-feather="twitter"></i>
-                </a>
-              </div>
-              </div>
-            </div>
+          <!-- Social Links -->
+          <div class="flex space-x-4">
+            <a href="https://linkedin.com/in/prashant-sarode-584508259" target="_blank"
+              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out">
+              <i data-feather="linkedin" class="w-6 h-6"></i>
+            </a>
+            <a href="https://instagram.com/photo_by_prashant" target="_blank"
+              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out">
+              <i data-feather="instagram" class="w-6 h-6"></i>
+            </a>
+            <a href="https://github.com/prashant007000" target="_blank"
+              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out">
+              <i data-feather="github" class="w-6 h-6"></i>
+            </a>
+            <a href="https://twitter.com/Prashant3454546" target="_blank"
+              class="w-12 h-12 flex items-center justify-center bg-orange-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out">
+              <i data-feather="twitter" class="w-6 h-6"></i>
+            </a>
           </div>
         </div>
-      </section>
-      <script>
-          feather.replace();
-          
-      </script>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer Section -->
+  <footer class="bg-sky-900 py-6">
+    <div class="max-w-[1280px] mx-auto text-center">
+      <div class="flex items-center justify-center mb-2">
+        <i data-feather="code" class="w-6 h-6 text-orange-600 mr-2"></i>
+        <p class="font-['Inter'] text-white text-[1rem]">
+          Website made by
+          <a href="https://github.com/prashant007000" target="_blank"
+            class="footer-link text-orange-600 font-semibold">Prashant</a>
+        </p>
+      </div>
+      <p class="font-['Inter'] text-gray-400 text-sm">
+        &copy; 2025 Prashant Sarode. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  <script>
+    // Initialize Feather Icons
+    feather.replace();
+
+    // Hamburger Menu Toggle with Animation
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const hamburgerTop = document.getElementById("hamburger-top");
+    const hamburgerMiddle = document.getElementById("hamburger-middle");
+    const hamburgerBottom = document.getElementById("hamburger-bottom");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+      const isOpen = !navLinks.classList.contains("hidden");
+      hamburgerTop.setAttribute("d", isOpen ? "M6 6L18 18" : "M4 6h16");
+      hamburgerMiddle.style.opacity = isOpen ? "0" : "1";
+      hamburgerBottom.setAttribute("d", isOpen ? "M6 18L18 6" : "M4 18h16");
+    });
+
+  </script>
 </body>
 
 </html>
