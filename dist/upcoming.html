@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prashant Sarode - Upcoming Work</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Poppins and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    /* Fade-in animations */
+    .fade-element {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(15px);
+      animation-delay: calc(var(--index) * 0.2s);
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Card hover */
+    .card {
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(249, 115, 22, 0.2); /* orange-600 */
+    }
+    /* Button hover */
+    .button {
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(249, 115, 22, 0.3);
+    }
+    /* Icon hover */
+    .icon {
+      transition: all 0.3s ease;
+    }
+    .icon:hover {
+      transform: scale(1.2);
+    }
+    /* Nav link hover */
+    .nav-link {
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #f97316; /* orange-600 */
+      text-decoration: underline;
+    }
+    /* Overlay for hero images */
+    .hero-overlay {
+      transition: all 0.3s ease;
+      opacity: 0.7;
+    }
+    .hero-overlay:hover {
+      opacity: 0.9;
+    }
+    /* Footer tooltip */
+    .tooltip {
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .group:hover .tooltip {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Image styles: No border, no curve, no hover */
+    .hero-image, .card-image {
+      border: none;
+      border-radius: 0;
+    }
+  </style>
+</head >
+<body class="bg-gray-700">
+  <!-- Navigation -->
+  <nav
+    class="border-gray-900 sticky top-0 z-50 py-4"
+    role="navigation"
+    aria-label="Main Navigation"
+  >
+    <div class="w-11/12 max-w-[1280px] xl:max-w-[1400px] mx-auto flex justify-center space-x-6">
+      <a
+        href="index.html"
+        class="nav-link font-['Inter'] text-white text-base md:text-lg hover:text-orange-600"
+      >Main page</a>
+      <a
+        href="#upcoming"
+        class="nav-link font-['Inter'] text-white text-base md:text-lg hover:text-orange-600"
+        aria-current="page"
+      >Upcoming</a>
+     
+    </div>
+  </nav>
+
+  <!-- Upcoming Section -->
+  <section
+    id="upcoming"
+    class="relative bg-gradient-to-b from-black to-black py-16 lg:py-20"
+    role="region"
+    aria-label="Prashant Sarode's Upcoming Work"
+  >
+    <div class="w-11/12 max-w-[1280px] xl:max-w-[1400px] mx-auto">
+      <!-- Heading -->
+      <h2
+        class="fade-element font-['Poppins'] font-black text-[2rem] md:text-[3rem] xl:text-[3.5rem] leading-[1.1] tracking-tighter text-gray-900 text-center mb-12"
+        style="--index: 1"
+      >
+        <span class="block uppercase text-red-900">Upcoming</span>
+        <span class="block uppercase text-blue-300">Work</span>
+      </h2>
+
+      <!-- Hero Image Section 1 -->
+      <div
+        class="fade-element relative w-full h-[300px] md:h-[400px] xl:h-[500px] overflow-hidden mb-12"
+        style="--index: 2"
+      >
+        <img
+          src="/photos/pexels-goumbik-574071.jpg"
+          alt="AI and Machine Learning Concept for Predictive Analytics"
+          class="hero-image w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div class="hero-overlay absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center p-6">
+          <h3 class="font-['Inter'] font-semibold text-xl md:text-2xl xl:text-3xl text-white mb-4">
+            Predictive Analytics ML Model
+          </h3>
+          <p class="font-['Inter'] text-gray-200 text-sm md:text-base xl:text-lg mb-6">
+            Building a machine learning model to predict real-world outcomes using advanced algorithms.
+          </p>
+          <a
+            href="#"
+            class="button bg-red-600 text-white font-['Inter'] font-semibold text-sm md:text-base py-2 px-6 rounded-full hover:bg-orange-700"
+            aria-label="Learn More About Predictive Analytics Project"
+          >
+            Coming Soon
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid Image Sections -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
+        <!-- Card 1 -->
+        <article
+          class="fade-element card bg-gray-50 rounded-lg shadow-md p-6 md:p-8"
+          style="--index: 3"
+          aria-label="Deep Learning Specialization"
+        >
+          <div class="relative w-full h-[200px] md:h-[250px] overflow-hidden mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1620712943543-bcc4688e1750?q=80&w=2070&auto=format&fit=crop"
+              alt="Deep Learning Neural Network Visualization"
+              class="card-image w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex items-center mb-4">
+            <i class="fas fa-certificate w-8 h-8 lg:w-10 lg:h-10 text-red-600 mr-3 icon" aria-hidden="true"></i>
+            <h3 class="font-['Inter'] font-semibold text-lg md:text-xl text-gray-800">
+              Deep Learning Specialization
+            </h3>
+          </div>
+          <p class="font-['Inter'] text-gray-600 text-sm md:text-[0.95rem] leading-6">
+            Planning to enroll in a deep learning course to master neural networks and AI.
+          </p>
+          <p class="font-['Inter'] text-gray-600 text-sm md:text-[0.95rem] leading-6 mt-2">
+            Planned: Q3 2025 | <span class="text-red-600 font-semibold">Scheduled</span>
+          </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article
+          class="fade-element card bg-gray-50 rounded-lg shadow-md p-6 md:p-8"
+          style="--index: 4"
+          aria-label="Portfolio Website Redesign"
+        >
+          <div class="relative w-full h-[200px] md:h-[250px] overflow-hidden mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1461749288671-4b7e74ab3f1a?q=80&w=2070&auto=format&fit=crop"
+              alt="Web Development and Coding Workspace"
+              class="card-image w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex items-center mb-4">
+            <i class="fas fa-code w-8 h-8 lg:w-10 lg:h-10 text-red-600 mr-3 icon" aria-hidden="true"></i>
+            <h3 class="font-['Inter'] font-semibold text-lg md:text-xl text-gray-800">
+              Portfolio Redesign
+            </h3>
+          </div>
+          <p class="font-['Inter'] text-gray-600 text-sm md:text-[0.95rem] leading-6">
+            Revamping this portfolio with interactive UI and new project showcases.
+          </p>
+          <p class="font-['Inter'] text-gray-600 text-sm md:text-[0.95rem] leading-6 mt-2">
+            Planned: Q4 2025 | <span class="text-red-600 font-semibold">In Planning</span>
+          </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article
+          class="fade-element card bg-gray-50 rounded-lg shadow-md p-6 md:p-8"
+          style="--index: 5"
+          aria-label="AI-Powered Chatbot Development"
+        >
+          <div class="relative w-full h-[200px] md:h-[250px] overflow-hidden mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1677442136019-21780ecad04a?q=80&w=2070&auto=format&fit=crop"
+              alt="AI Chatbot Interface Concept"
+              class="card-image w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex items-center mb-4">
+            <i class="fas fa-robot w-8 h-8 lg:w-10 lg:h-10 text-red-600 mr-3 icon" aria-hidden="true"></i>
+            <h3 class="font-['Inter'] font-semibold text-lg md:text-xl text-gray-800">
+              AI Chatbot Development
+            </h3>
+          </div>
+          <p class="font-['Inter'] text-gray-600 text-sm md:text-[0.95rem] leading-6">
+            Creating an AI-powered chatbot for real-time user interactions.
+          </p>
+          <p class="font-['Inter'] text-gray-600 text-sm md:text-[0.95rem] leading-6 mt-2">
+            Planned: Q2 2025 | <span class="text-red-600 font-semibold">In Progress</span>
+          </p>
+        </article>
+      </div>
+
+      <!-- Hero Image Section 2 -->
+      <div
+        class="fade-element relative w-full h-[300px] md:h-[400px] xl:h-[500px] overflow-hidden"
+        style="--index: 6"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=2070&auto=format&fit=crop"
+          alt="Robotics and AI Innovation Concept"
+          class="hero-image w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div class="hero-overlay absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center p-6">
+          <h3 class="font-['Inter'] font-semibold text-xl md:text-2xl xl:text-3xl text-white mb-4">
+            Robotics & AI Integration
+          </h3>
+          <p class="font-['Inter'] text-gray-200 text-sm md:text-base xl:text-lg mb-6">
+            Exploring the fusion of robotics and AI for innovative applications.
+          </p>
+          <a
+            href="#"
+            class="button bg-green-600 text-white font-['Inter'] font-semibold text-sm md:text-base py-2 px-6 rounded-full hover:bg-orange-700"
+            aria-label="Learn More About Robotics and AI Project"
+          >
+            Coming Soon
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer
+    class="bg-black py-8 lg:py-10"
+    role="contentinfo"
+    aria-label="Website Footer"
+  >
+    <div class="w-11/12 max-w-[1280px] xl:max-w-[1400px] mx-auto text-center">
+      <div
+        class="fade-element flex flex-col items-center mb-4"
+        style="--index: 1"
+      >
+        <div class="flex items-center mb-3">
+          <i class="fas fa-code w-6 h-6 lg:w-7 lg:h-7 text-red-600 mr-2 icon" aria-hidden="true"></i>
+          <p class="font-['Inter'] text-white text-base lg:text-lg">
+            Website made by
+            <a
+              href="https://github.com/prashant007000"
+              target="_blank"
+              class="text-orange-600 font-semibold hover:underline"
+              aria-label="Prashant Sarode's GitHub Profile"
+            >Prashant</a>
+          </p>
+        </div>
+        <div class="flex space-x-3">
+          <a
+            href="https://linkedin.com/in/prashant-sarode-584508259"
+            target="_blank"
+            class="group w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center bg-red-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg button"
+            aria-label="Prashant Sarode's LinkedIn Profile"
+          >
+            <i class="fab fa-linkedin-in w-5 h-5" aria-hidden="true"></i>
+            <span
+              class="tooltip absolute top-12 bg-gray-800 text-white text-xs rounded py-1 px-2"
+            >
+              LinkedIn
+            </span>
+          </a>
+          <a
+            href="https://instagram.com/photo_by_prashant"
+            target="_blank"
+            class="group w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center bg-red-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg button"
+            aria-label="Prashant Sarode's Instagram Profile"
+          >
+            <i class="fab fa-instagram w-5 h-5" aria-hidden="true"></i>
+            <span
+              class="tooltip absolute top-12 bg-gray-800 text-white text-xs rounded py-1 px-2"
+            >
+              Instagram
+            </span>
+          </a>
+          <a
+            href="https://github.com/prashant007000"
+            target="_blank"
+            class="group w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center bg-red-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg button"
+            aria-label="Prashant Sarode's GitHub Profile"
+          >
+            <i class="fab fa-github w-5 h-5" aria-hidden="true"></i>
+            <span
+              class="tooltip absolute top-12 bg-gray-800 text-white text-xs rounded py-1 px-2"
+            >
+              GitHub
+            </span>
+          </a>
+          <a
+            href="https://twitter.com/Prashant3454546"
+            target="_blank"
+            class="group w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center bg-red-500 text-white rounded-full hover:bg-orange-600 hover:shadow-lg button"
+            aria-label="Prashant Sarode's Twitter Profile"
+          >
+            <i class="fab fa-x-twitter w-5 h-5" aria-hidden="true"></i>
+            <span
+              class="tooltip absolute top-12 bg-gray-800 text-white text-xs rounded py-1 px-2"
+            >
+              Twitter
+            </span>
+          </a>
+        </div>
+      </div>
+      <p
+        class="fade-element font-['Inter'] text-gray-400 text-sm lg:text-base"
+        style="--index: 2"
+      >
+        © 2025 Prashant Sarode. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
